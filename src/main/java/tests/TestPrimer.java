@@ -9,7 +9,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         Navigation.class,
-        Functionality.class
+     //   Functionality.class
 })
 public class TestPrimer {
 }

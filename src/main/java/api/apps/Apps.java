@@ -1,5 +1,6 @@
 package api.apps;
 
+import api.apps.hyundai.Hyundai;
 import api.apps.speedtest.Speedtest;
 
 /**
@@ -7,5 +8,6 @@ import api.apps.speedtest.Speedtest;
  */
 public class Apps {
 
+    public Hyundai hyundai = new Hyundai();
     public Speedtest speedtest = new Speedtest();
 }

@@ -1,6 +1,7 @@
 package tests;
 
 import api.android.Android;
+import api.apps.hyundai.Hyundai;
 import api.apps.speedtest.Speedtest;
 import core.managers.TestManager;
 import org.junit.Before;
@@ -13,11 +14,12 @@ import org.junit.Assert;
  */
 public class Navigation extends TestManager {
 
-    private static Speedtest speedtest = Android.app.speedtest;
+    //private static Speedtest speedtest = Android.app.speedtest;
+    private static Hyundai hyundai = Android.app.hyundai;
 
     @BeforeClass
     public static void beforeClass(){
-        speedtest.open();
+        hyundai.open();
     }
 
     @Before
@@ -28,37 +30,11 @@ public class Navigation extends TestManager {
     @Test
     public void test1(){
         testInfo.id("test1").name("Verify that Home Activity has all the elements");
-        Assert.assertTrue(speedtest.home.uiObject.ping().exists());
-        Assert.assertTrue(speedtest.home.uiObject.pingSpeed().exists());
-        Assert.assertTrue(speedtest.home.uiObject.download().exists());
-        Assert.assertTrue(speedtest.home.uiObject.downloadSpeed().exists());
-        Assert.assertTrue(speedtest.home.uiObject.upload().exists());
-        Assert.assertTrue(speedtest.home.uiObject.uploadSpeed().exists());
-        Assert.assertTrue(speedtest.home.uiObject.shareButton().exists());
-        Assert.assertTrue(speedtest.home.uiObject.removeAdsButton().exists());
-        Assert.assertTrue(speedtest.home.uiObject.testAgainButton().exists());
-        Assert.assertTrue(speedtest.home.uiObject.logo().exists());
+        hyundai.home.waitToLoad();
+        hyundai.home.tapMenu();
+        Assert.assertTrue(hyundai.home.uiObject.menuButton().exists());
+
     }
 
-    @Test
-    public void test2(){
-        testInfo.id("test2").name("Verify that Results has sorting buttons");
-        speedtest.menu.tapResults();
-        Assert.assertTrue(speedtest.results.uiObject.toolsButton().exists());
-        Assert.assertTrue(speedtest.results.uiObject.resultsLabel().exists());
-        Assert.assertTrue(speedtest.results.uiObject.sortByDownload().exists());
-        Assert.assertTrue(speedtest.results.uiObject.sortByPing().exists());
-        Assert.assertTrue(speedtest.results.uiObject.sortByTime().exists());
-        Assert.assertTrue(speedtest.results.uiObject.sortByType().exists());
-        Assert.assertTrue(speedtest.results.uiObject.sortByUpload().exists());
-        Assert.assertTrue(speedtest.results.uiObject.logo().exists());
-    }
 
-    @Test
-    public void test3(){
-        testInfo.id("test3").name("Verify that About activity has PP & ToU links");
-        speedtest.menu.tapAbout();
-        Assert.assertTrue(speedtest.about.uiObject.privacyPolicy().exists());
-        Assert.assertTrue(speedtest.about.uiObject.termsOfUse().exists());
-    }
 }
