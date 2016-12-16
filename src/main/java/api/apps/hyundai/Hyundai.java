@@ -1,9 +1,12 @@
 package api.apps.hyundai;
 
 import api.android.Android;
-import api.apps.speedtest.about.About;
-import api.apps.speedtest.begintest.BeginTest;
+import api.apps.hyundai.balance.Balance;
+import api.apps.hyundai.calendar.Calendar;
+import api.apps.hyundai.menu.Menu;
 import api.apps.hyundai.home.Home;
+import api.apps.hyundai.navigator.Navigator;
+import api.apps.hyundai.tips.Tips;
 import api.interfaces.Activity;
 import api.interfaces.Application;
 
@@ -12,10 +15,12 @@ import api.interfaces.Application;
  */
 public class Hyundai implements Application{
 
-    //public Menu menu = new Menu();
+    public Menu menu = new Menu();
     public Home home = new Home();
-    //public BeginTest beginTest = new BeginTest();
-    //public Results results = new Results();
+    public Calendar calendar = new Calendar();
+    public Navigator navigator = new Navigator();
+    public Tips tips = new Tips();
+    public Balance balance = new Balance();
 
     @Override
     public void forceStop() {

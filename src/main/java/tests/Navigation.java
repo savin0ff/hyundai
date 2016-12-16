@@ -29,11 +29,17 @@ public class Navigation extends TestManager {
 
     @Test
     public void test1(){
+
         testInfo.id("test1").name("Verify that Home Activity has all the elements");
         hyundai.home.waitToLoad();
+        hyundai.home.footerMenu.tapNavigatorButton();
+        hyundai.home.footerMenu.tapCalendarButton();
+        hyundai.home.footerMenu.tapNavigatorButton();
+        hyundai.home.footerMenu.tapHomeButton();
+        hyundai.home.footerMenu.tapTipsButton();
+        hyundai.home.footerMenu.tapBalanceButton();
         hyundai.home.tapMenu();
         Assert.assertTrue(hyundai.home.uiObject.menuButton().exists());
-
     }
 
 

@@ -21,6 +21,10 @@ public class UiObject {
         return !locator.contains("UiSelector");
     }
 
+    public String getLocator(){
+        return this.locator;
+    }
+
     public boolean exists(){
         try{
             WebElement element;

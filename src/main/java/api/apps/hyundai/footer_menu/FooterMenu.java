@@ -1,52 +1,60 @@
 package api.apps.hyundai.footer_menu;
 
 import api.android.Android;
-import api.apps.hyundai.home.Home;
 import core.MyLogger;
 import org.openqa.selenium.NoSuchElementException;
 
 public class FooterMenu {
-/*
-    public MenuUiObjects uiObject = new MenuUiObjects();
 
-    public Home tapSpeedtest(){
+    public FooterMenuUiObjects menuObject = new FooterMenuUiObjects();
+
+    public api.apps.hyundai.navigator.Navigator tapNavigatorButton(){
         try{
-            MyLogger.log.info("Tapping on the Speedtest Menu Button");
-            uiObject.speedtest().tap();
-            return Android.app.hyundai.home.waitToLoad();
+            MyLogger.log.info("Tapping Navigator button");
+            menuObject.navigatorButton().click();
+            return Android.app.hyundai.navigator;
         }catch (NoSuchElementException e){
-            throw new AssertionError("Cant tap Speedtest Button, element absent or blocked");
+            throw new AssertionError("Cant tap Navigator button, element absent or blocked");
         }
     }
 
-    public Results tapResults(){
+    public api.apps.hyundai.calendar.Calendar tapCalendarButton(){
         try{
-            MyLogger.log.info("Tapping on the Results Menu Button");
-            uiObject.resutls().tap();
-            return Android.app.speedtest.results.waitToLoad();
+            MyLogger.log.info("Tapping Calendar button");
+            menuObject.calendarButton().click();
+            return Android.app.hyundai.calendar;
         }catch (NoSuchElementException e){
-            throw new AssertionError("Cant tap Results Button, element absent or blocked");
+            throw new AssertionError("Cant tap Calendar button, element absent or blocked");
         }
     }
 
-    //Todo return settings
-    public void tapSettings(){
+    public api.apps.hyundai.home.Home tapHomeButton(){
         try{
-            MyLogger.log.info("Tapping on the Settings Menu Button");
-            uiObject.settings().tap();
+            MyLogger.log.info("Tapping Home");
+            menuObject.homeButton().click();
+            return Android.app.hyundai.home;
         }catch (NoSuchElementException e){
-            throw new AssertionError("Cant tap Settings Button, element absent or blocked");
+            throw new AssertionError("Cant tap Home button, element absent or blocked");
         }
     }
 
-    //Todo return about
-    public About tapAbout(){
+    public api.apps.hyundai.tips.Tips tapTipsButton(){
         try{
-            MyLogger.log.info("Tapping on the About Menu Button");
-            uiObject.about().tap();
-            return Android.app.speedtest.about.waitToLoad();
+            MyLogger.log.info("Tapping Tips");
+            menuObject.tipsButton().click();
+            return Android.app.hyundai.tips;
         }catch (NoSuchElementException e){
-            throw new AssertionError("Cant tap About Button, element absent or blocked");
+            throw new AssertionError("Cant tap Tips button, element absent or blocked");
         }
-    }*/
+    }
+
+    public api.apps.hyundai.balance.Balance tapBalanceButton(){
+        try{
+            MyLogger.log.info("Tapping Balance");
+            menuObject.balanceButton().click();
+            return Android.app.hyundai.balance;
+        }catch (NoSuchElementException e){
+            throw new AssertionError("Cant tap Balance button, element absent or blocked");
+        }
+    }
 }

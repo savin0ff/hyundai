@@ -1,6 +1,7 @@
 package api.apps.hyundai.home;
 
 import api.android.Android;
+import api.apps.hyundai.footer_menu.FooterMenu;
 import api.apps.hyundai.home.*;
 import api.interfaces.Activity;
 import core.MyLogger;
@@ -12,6 +13,8 @@ import org.openqa.selenium.NoSuchElementException;
 public class Home implements Activity {
     public api.apps.hyundai.home.HomeUiObjects uiObject = new api.apps.hyundai.home.HomeUiObjects();
 
+    public FooterMenu footerMenu = new FooterMenu();
+
 /*    public String getPingSpeed(){
         try{
             MyLogger.log.info("Getting Ping Speed");
@@ -21,13 +24,13 @@ public class Home implements Activity {
         }
     }*/
 
-    public api.apps.hyundai.home.Home tapMenu(){
+    public api.apps.hyundai.menu.Menu tapMenu(){
         try{
             MyLogger.log.info("Tapping Menu");
             uiObject.menuButton().waitToAppear(10).tap();
-            return Android.app.hyundai.home;
+            return Android.app.hyundai.menu;
         }catch (NoSuchElementException e){
-            throw new AssertionError("Cant tap Test Again button, element absent or blocked");
+            throw new AssertionError("Cant tap Menu button, element absent or blocked");
         }
     }
 
