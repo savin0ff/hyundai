@@ -15,7 +15,7 @@ public class MenuUiObjects {
             about;
 
     public UiObject speedtest(){
-        if(speedtest == null) speedtest = new UiSelector().text("SPEEDTEST").makeUiObject();
+        if(speedtest == null) speedtest = new UiSelector().text("Начать проверку").makeUiObject();
         return speedtest;
     }
 

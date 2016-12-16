@@ -47,7 +47,7 @@ public class DriverManager {
     private static URL host(String deviceID) throws MalformedURLException {
         if(hosts == null){
             hosts = new HashMap<String, URL>();
-            hosts.put("ZX1G324LHF", new URL("http://127.0.0.1:4723/wd/hub"));
+            hosts.put(deviceID, new URL("http://127.0.0.1:4723/wd/hub"));
         }return hosts.get(deviceID);
     }
 
