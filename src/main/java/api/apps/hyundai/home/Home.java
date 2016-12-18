@@ -3,6 +3,7 @@ package api.apps.hyundai.home;
 import api.android.Android;
 import api.apps.hyundai.footer_menu.FooterMenu;
 import api.apps.hyundai.home.*;
+import api.apps.hyundai.menu.Menu;
 import api.interfaces.Activity;
 import core.MyLogger;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,8 +12,8 @@ import org.openqa.selenium.NoSuchElementException;
  * Created by sav80 on 16.12.2016.
  */
 public class Home implements Activity {
-    public api.apps.hyundai.home.HomeUiObjects uiObject = new api.apps.hyundai.home.HomeUiObjects();
 
+    public HomeUiObjects uiObject = new HomeUiObjects();
     public FooterMenu footerMenu = new FooterMenu();
 
 /*    public String getPingSpeed(){
@@ -24,7 +25,7 @@ public class Home implements Activity {
         }
     }*/
 
-    public api.apps.hyundai.menu.Menu tapMenu(){
+    public Menu tapMenu(){
         try{
             MyLogger.log.info("Tapping Menu");
             uiObject.menuButton().waitToAppear(10).tap();
@@ -35,7 +36,7 @@ public class Home implements Activity {
     }
 
     @Override
-    public api.apps.hyundai.home.Home waitToLoad() {
+    public Home waitToLoad() {
         try{
             MyLogger.log.info("Waiting for Home activity");
             uiObject.ToolbarText().waitToAppear(10);

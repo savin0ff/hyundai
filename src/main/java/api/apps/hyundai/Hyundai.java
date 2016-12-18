@@ -6,7 +6,12 @@ import api.apps.hyundai.calendar.Calendar;
 import api.apps.hyundai.menu.Menu;
 import api.apps.hyundai.home.Home;
 import api.apps.hyundai.navigator.Navigator;
+import api.apps.hyundai.startscreens.StartScreen1;
+import api.apps.hyundai.startscreens.StartScreen2;
+import api.apps.hyundai.startscreens.StartScreen3;
+import api.apps.hyundai.startscreens.StartScreen4;
 import api.apps.hyundai.tips.Tips;
+import api.apps.login.Login;
 import api.interfaces.Activity;
 import api.interfaces.Application;
 
@@ -15,6 +20,11 @@ import api.interfaces.Application;
  */
 public class Hyundai implements Application{
 
+    public StartScreen1 startscreen1 = new StartScreen1();
+    public StartScreen2 startscreen2 = new StartScreen2();
+    public StartScreen3 startscreen3 = new StartScreen3();
+    public StartScreen4 startscreen4 = new StartScreen4();
+    public Login login = new Login();
     public Menu menu = new Menu();
     public Home home = new Home();
     public Calendar calendar = new Calendar();

@@ -1,10 +1,8 @@
 package api.apps.hyundai.footer_menu;
 
 import api.android.Android;
-import core.UiObject;
-import core.UiSelector;
+import core.MyLogger;
 import io.appium.java_client.MobileElement;
-import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
@@ -21,14 +19,14 @@ public class FooterMenuUiObjects {
             tipsButton,
             balanceButton;
 
-    public WebElement navigatorButton(){
+    public MobileElement navigatorButton(){
         if(navigatorButton == null) {
             getButtons();
         }
         return navigatorButton;
     }
 
-    public WebElement calendarButton(){
+    public MobileElement calendarButton(){
         if(calendarButton == null) {
             getButtons();
         }
@@ -37,21 +35,21 @@ public class FooterMenuUiObjects {
 
 
 
-    public WebElement homeButton(){
+    public MobileElement homeButton(){
         if(homeButton == null) {
             getButtons();
         }
         return homeButton;
     }
 
-    public WebElement tipsButton(){
+    public MobileElement tipsButton(){
         if(tipsButton == null) {
             getButtons();
         }
         return tipsButton;
     }
 
-    public WebElement balanceButton(){
+    public MobileElement balanceButton(){
         if(balanceButton == null) {
             getButtons();
         }
@@ -62,7 +60,7 @@ public class FooterMenuUiObjects {
         if (elements == null) {
 
             elements = Android.driver.findElementsByXPath("//android.widget.ImageView[@resource-id='com.mediapark.hyundai:id/bottom_navigation_small_item_icon']");
-            System.out.println("=========Elements size="+ elements.size());
+            MyLogger.log.debug("=========FooterMenu Elements size="+ elements.size());
             navigatorButton = elements.get(0);
             calendarButton = elements.get(1);
             homeButton = elements.get(2);

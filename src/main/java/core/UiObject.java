@@ -25,6 +25,10 @@ public class UiObject {
         return this.locator;
     }
 
+    public void setLocator(String locator){
+        this.locator = locator;
+    }
+
     public boolean exists(){
         try{
             WebElement element;
