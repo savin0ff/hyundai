@@ -32,13 +32,10 @@ public class Navigation extends TestManager {
 
         testInfo.id("test1").name("Verify that Home Activity has all the elements");
         hyundai.home.waitToLoad();
-        hyundai.home.footerMenu.tapNavigatorButton();
-        hyundai.home.footerMenu.tapCalendarButton();
-        hyundai.home.footerMenu.tapNavigatorButton();
-        hyundai.home.footerMenu.tapHomeButton();
-        hyundai.home.footerMenu.tapTipsButton();
-        hyundai.home.footerMenu.tapBalanceButton();
-        hyundai.home.tapMenu();
+
+        hyundai.home.footerMenu.tapCalendarButton().footerMenu.tapHomeButton().footerMenu.tapNavigatorButton().footerMenu.tapTipsButton().footerMenu.tapBalanceButton().footerMenu.tapHomeButton();
+        hyundai.home.footerMenu.tapBalanceButton().footerMenu.tapTipsButton().footerMenu.tapHomeButton().footerMenu.tapCalendarButton().footerMenu.tapNavigatorButton().footerMenu.tapHomeButton();
+       // hyundai.home.tapMenu();
         Assert.assertTrue(hyundai.home.uiObject.menuButton().exists());
     }
 

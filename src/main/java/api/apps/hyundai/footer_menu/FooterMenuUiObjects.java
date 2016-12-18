@@ -1,6 +1,9 @@
 package api.apps.hyundai.footer_menu;
 
 import api.android.Android;
+import core.UiObject;
+import core.UiSelector;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -9,9 +12,9 @@ import java.util.List;
  * Created by sav80 on 16.12.2016.
  */
 public class FooterMenuUiObjects {
-    private List<WebElement> elements;
+    private List<MobileElement> elements;
 
-    private static WebElement
+    private MobileElement
             navigatorButton,
             calendarButton,
             homeButton,
@@ -59,11 +62,13 @@ public class FooterMenuUiObjects {
         if (elements == null) {
 
             elements = Android.driver.findElementsByXPath("//android.widget.ImageView[@resource-id='com.mediapark.hyundai:id/bottom_navigation_small_item_icon']");
+            System.out.println("=========Elements size="+ elements.size());
             navigatorButton = elements.get(0);
             calendarButton = elements.get(1);
             homeButton = elements.get(2);
             tipsButton = elements.get(3);
             balanceButton = elements.get(4);
+
         }
     }
 }
