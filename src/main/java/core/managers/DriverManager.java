@@ -41,6 +41,7 @@ public class DriverManager {
             caps.setCapability("deviceName", deviceID);
             caps.setCapability("platformName", "Android");
             caps.setCapability("app", "C:/Appium/node_modules/appium/build/unlock_apk/unlock_apk-debug.apk");
+            caps.setCapability("unicodeKeyboard",true);
         return caps;
     }
 

@@ -1,6 +1,7 @@
 package api.apps.hyundai.footer_menu;
 
 import api.android.Android;
+import api.apps.hyundai.advices.Advices;
 import core.MyLogger;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -38,13 +39,13 @@ public class FooterMenu {
         }
     }
 
-    public api.apps.hyundai.tips.Tips tapTipsButton(){
+    public Advices tapTipsButton(){
         try{
-            MyLogger.log.info("Tapping Tips");
+            MyLogger.log.info("Tapping Advices");
             menuObject.tipsButton().click();
-            return Android.app.hyundai.tips;
+            return Android.app.hyundai.advices;
         }catch (NoSuchElementException e){
-            throw new AssertionError("Cant tap Tips button, element absent or blocked");
+            throw new AssertionError("Cant tap Advices button, element absent or blocked");
         }
     }
 
