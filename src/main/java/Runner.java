@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 public class Runner {
     public static void main(String[] args) throws MalformedURLException {
 
-        MyLogger.log.setLevel(Level.DEBUG);
+        MyLogger.log.setLevel(Level.INFO);
         try{
             DriverManager.createDriver();
             JUnitCore.runClasses(TestPrimer.class);

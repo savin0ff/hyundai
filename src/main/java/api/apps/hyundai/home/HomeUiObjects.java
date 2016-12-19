@@ -49,7 +49,7 @@ public class HomeUiObjects {
 
 
 
-    public UiObject ToolbarText(){
+    public UiObject toolbarText(){
         if(toolbarText == null) toolbarText = new UiSelector().resourceId(Android.app.hyundai.packageID()+":id/toolbar_text").makeUiObject();
         return toolbarText;
     }

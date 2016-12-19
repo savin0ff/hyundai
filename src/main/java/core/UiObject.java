@@ -40,6 +40,13 @@ public class UiObject {
         }
     }
 
+    public boolean isPassword(){
+        WebElement element;
+        if(isXpath()) element = Android.driver.findElementByXPath(locator);
+        else element = Android.driver.findElementByAndroidUIAutomator(locator);
+        return element.getAttribute("password").equals("true");
+    }
+
     public boolean isChecked(){
         WebElement element;
         if(isXpath()) element = Android.driver.findElementByXPath(locator);
@@ -114,7 +121,7 @@ public class UiObject {
         WebElement element;
         if(isXpath()) element = Android.driver.findElementByXPath(locator);
         else element = Android.driver.findElementByAndroidUIAutomator(locator);
-        return element.getAttribute("name");
+        return element.getAttribute("text");
     }
 
     public String getResourceId(){

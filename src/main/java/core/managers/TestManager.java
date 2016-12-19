@@ -19,7 +19,7 @@ public class TestManager {
     public static TestInfo testInfo = new TestInfo();
 
     @Rule
-    public Retry retry = new Retry(3);
+    public Retry retry = new Retry(1);
 
     @Before
     public void before(){
@@ -32,6 +32,8 @@ public class TestManager {
         public void failed(Throwable t, Description description){
             MyLogger.log.info("Test Failed:");
             TestInfo.printResults();
+            MyLogger.log.info("Exception: "+t.getMessage());
+            MyLogger.log.info("Cause: "+t.getCause());
         }
 
         @Override

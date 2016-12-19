@@ -162,7 +162,7 @@ public class ADB {
         else throw new RuntimeException("Failed to start logcat process!");
     }
 
-    public void stopLocat(Object PID){
+    public void stopLogcat(Object PID){
         command("adb -s "+ID+" shell kill "+PID);
     }
 }

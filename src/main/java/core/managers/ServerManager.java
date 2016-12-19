@@ -25,7 +25,7 @@ public class ServerManager {
     }
 
     public static boolean isWindows(){
-        return getOS().startsWith("Windows");
+        return getOS().contains("Windows");
     }
 
     public static boolean isMac(){

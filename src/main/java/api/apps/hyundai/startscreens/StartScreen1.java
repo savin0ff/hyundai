@@ -1,8 +1,7 @@
 package api.apps.hyundai.startscreens;
 
 import api.android.Android;
-import api.apps.Apps;
-import api.apps.login.Login;
+import api.apps.hyundai.auth.Auth;
 import api.interfaces.Activity;
 import core.MyLogger;
 import org.junit.Assert;
@@ -15,21 +14,21 @@ public class StartScreen1  implements Activity {
 
     public StartScreen1UiObjects uiObject = new StartScreen1UiObjects();
 
-    public Login tapSkipButton(){
+    public Auth tapSkipButton(){
         try{
             MyLogger.log.info("Tapping Skip button");
             uiObject.skipButton().waitToAppear(3).tap();
-            return Android.app.hyundai.login;
+            return Android.app.hyundai.auth;
         }catch (NoSuchElementException e){
             throw new AssertionError("Cant tap Skip button, element absent or blocked");
         }
     }
 
-    public Login tapCloseButton(){
+    public Auth tapCloseButton(){
         try{
             MyLogger.log.info("Tapping Close button");
             uiObject.closeButton().waitToAppear(3).tap();
-            return Android.app.hyundai.login;
+            return Android.app.hyundai.auth;
         }catch (NoSuchElementException e){
             throw new AssertionError("Cant tap Close button, element absent or blocked");
         }
@@ -38,7 +37,7 @@ public class StartScreen1  implements Activity {
     public StartScreen1 swipeRight(){
         try{
             MyLogger.log.info("Swipping right");
-            Android.driver.swipe(1000,640, 100, 640, 200);
+            Android.driver.swipe(1000,640, 100, 640, 300);
             return Android.app.hyundai.startscreen2;
         }catch (Exception e){
             throw new AssertionError("Can't swipe");

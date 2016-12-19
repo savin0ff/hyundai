@@ -2,7 +2,6 @@ package api.apps.hyundai.home;
 
 import api.android.Android;
 import api.apps.hyundai.footer_menu.FooterMenu;
-import api.apps.hyundai.home.*;
 import api.apps.hyundai.menu.Menu;
 import api.interfaces.Activity;
 import core.MyLogger;
@@ -15,15 +14,6 @@ public class Home implements Activity {
 
     public HomeUiObjects uiObject = new HomeUiObjects();
     public FooterMenu footerMenu = new FooterMenu();
-
-/*    public String getPingSpeed(){
-        try{
-            MyLogger.log.info("Getting Ping Speed");
-            return uiObject.pingSpeed().getText();
-        }catch (NoSuchElementException e){
-            throw new AssertionError("Cant get Ping Speed, element absent or blocked");
-        }
-    }*/
 
     public Menu tapMenu(){
         try{
@@ -39,7 +29,7 @@ public class Home implements Activity {
     public Home waitToLoad() {
         try{
             MyLogger.log.info("Waiting for Home activity");
-            uiObject.ToolbarText().waitToAppear(10);
+            uiObject.toolbarText().waitToAppear(10);
             return Android.app.hyundai.home;
         }catch (AssertionError e){
             throw new AssertionError("Home activity failed to load/open");
