@@ -8,7 +8,7 @@ import core.UiSelector;
 /**
  * Created by sav80 on 19.12.2016.
  */
-public class ChooseCarUiObjects {
+public class ChooseCarAfterRegistrationUiObjects {
     private static UiObject
             title,
             subtitle,

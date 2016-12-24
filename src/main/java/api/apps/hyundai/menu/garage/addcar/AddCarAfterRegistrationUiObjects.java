@@ -1,4 +1,4 @@
-package api.apps.hyundai.addcar;
+package api.apps.hyundai.menu.garage.addcar;
 
 import api.android.Android;
 import core.UiObject;

@@ -1,9 +1,7 @@
-package api.apps.hyundai.addcar;
+package api.apps.hyundai.menu.garage.addcar;
 
 import api.android.Android;
-import api.apps.hyundai.auth.Auth;
 import api.apps.hyundai.home.Home;
-import api.apps.hyundai.menu.garage.addcar.ChooseCar;
 import api.interfaces.Activity;
 import core.MyLogger;
 import org.openqa.selenium.NoSuchElementException;
@@ -12,23 +10,23 @@ import org.openqa.selenium.NoSuchElementException;
  * Created by sav80 on 19.12.2016.
  */
 public class AddCarAfterRegistration implements Activity {
-    public static AddCarAfterRegistrationUiObjects uiObject = new AddCarAfterRegistrationUiObjects();
+    public AddCarAfterRegistrationUiObjects uiObject = new AddCarAfterRegistrationUiObjects();
 
-    public ChooseCar tapPlusButton(){
+    public ChooseCarAfterRegistration tapPlusButton(){
         try{
             MyLogger.log.info("Tapping Plus Button ");
             uiObject.plusButton().waitToAppear(5).tap();
-            return Android.app.hyundai.chooseCar;
+            return Android.app.hyundai.chooseCarAfterRegistration;
         }catch (NoSuchElementException e){
             throw new AssertionError("Cant tap Plus Button, element absent or blocked");
         }
     }
 
-    public ChooseCar tapAddToGarageButton(){
+    public ChooseCarAfterRegistration tapAddToGarageButton(){
         try{
             MyLogger.log.info("Tapping AddToGarage Button ");
             uiObject.addToGarageButton().waitToAppear(5).tap();
-            return Android.app.hyundai.chooseCar;
+            return Android.app.hyundai.chooseCarAfterRegistration;
         }catch (NoSuchElementException e){
             throw new AssertionError("Cant tap AddToGarage Button, element absent or blocked");
         }

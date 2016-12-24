@@ -1,7 +1,7 @@
 package api.apps.hyundai.auth;
 
 import api.android.Android;
-import api.apps.hyundai.addcar.AddCarAfterRegistration;
+import api.apps.hyundai.menu.garage.addcar.AddCarAfterRegistration;
 import api.interfaces.Activity;
 import core.MyLogger;
 import core.UiObject;

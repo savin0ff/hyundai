@@ -1,7 +1,7 @@
 package api.apps.hyundai;
 
 import api.android.Android;
-import api.apps.hyundai.addcar.AddCarAfterRegistration;
+import api.apps.hyundai.menu.garage.addcar.AddCarAfterRegistration;
 import api.apps.hyundai.advices.Advices;
 import api.apps.hyundai.auth.*;
 import api.apps.hyundai.balance.Balance;
@@ -13,7 +13,7 @@ import api.apps.hyundai.home.Home;
 import api.apps.hyundai.menu.configurator.Configurator;
 import api.apps.hyundai.menu.garage.Garage;
 import api.apps.hyundai.menu.garage.addcar.AddCarByVIN;
-import api.apps.hyundai.menu.garage.addcar.ChooseCar;
+import api.apps.hyundai.menu.garage.addcar.ChooseCarAfterRegistration;
 import api.apps.hyundai.menu.lookfordiler.LookForDiler;
 import api.apps.hyundai.menu.myprofile.MyProfile;
 import api.apps.hyundai.menu.specialoffers.SpecialOffers;
@@ -49,7 +49,7 @@ public class Hyundai implements Application{
     public VKWebView vkWebView = new VKWebView();
     public FacebookWebView facebookWebView = new FacebookWebView();
     public AddCarAfterRegistration addCarAfterRegistration = new AddCarAfterRegistration();
-    public ChooseCar chooseCar = new ChooseCar();
+    public ChooseCarAfterRegistration chooseCarAfterRegistration = new ChooseCarAfterRegistration();
     public AddCarByVIN addCarByVIN = new AddCarByVIN();
     public Events events = new Events();
     public Configurator configurator = new Configurator();

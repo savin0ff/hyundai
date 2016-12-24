@@ -2,21 +2,16 @@ package tests;
 
 import api.android.Android;
 import api.apps.hyundai.Hyundai;
-import api.apps.hyundai.addcar.AddCarAfterRegistration;
+import api.apps.hyundai.menu.garage.addcar.AddCarAfterRegistration;
 import api.apps.hyundai.auth.Auth;
 import api.apps.hyundai.auth.ForgotPassword;
 import api.apps.hyundai.auth.Register;
-import api.apps.hyundai.menu.garage.addcar.ChooseCar;
-import api.apps.hyundai.startscreens.StartScreen;
+import api.apps.hyundai.menu.garage.addcar.ChooseCarAfterRegistration;
 import api.apps.hyundai.startscreens.StartScreen1;
-import api.apps.hyundai.startscreens.StartScreen2;
-import api.apps.hyundai.startscreens.StartScreen3;
-import api.apps.speedtest.Speedtest;
 import core.managers.TestManager;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.Assert;
 
 /**
  * Created by Artur on 6/2/2016.
@@ -92,7 +87,7 @@ public class Navigation extends TestManager {
         reg.tapEmail().waitToAppear(5).typeText("test000002@delete.me");
         reg.tapPassword().waitToAppear(5).typeText("Qwerty1");
         AddCarAfterRegistration add = reg.tapRegisterButton();
-        ChooseCar choosecar = add.waitToLoad().tapPlusButton();
+        ChooseCarAfterRegistration choosecar = add.waitToLoad().tapPlusButton();
         choosecar.tapCarByIndex(11);
     }
 
