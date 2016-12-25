@@ -1,7 +1,4 @@
-package api.apps.hyundai.startscreens;
-
-import core.UiObject;
-import core.UiSelector;
+package api.apps.hyundai.auth.startscreens;
 
 /**
  * Created by sav80 on 18.12.2016.

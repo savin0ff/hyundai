@@ -1,9 +1,7 @@
-package api.apps.hyundai.startscreens;
+package api.apps.hyundai.auth.startscreens;
 
 import api.android.Android;
 import core.MyLogger;
-import core.UiObject;
-import core.UiSelector;
 
 /**
  * Created by sav80 on 18.12.2016.

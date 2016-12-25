@@ -29,7 +29,7 @@ public class Home implements Activity {
     public Home waitToLoad() {
         try{
             MyLogger.log.info("Waiting for Home activity");
-            uiObject.toolbarText().waitToAppear(10);
+            uiObject.toolbarText().waitToAppear(15);
             return Android.app.hyundai.home;
         }catch (AssertionError e){
             throw new AssertionError("Home activity failed to load/open");

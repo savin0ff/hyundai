@@ -2,12 +2,14 @@ package tests;
 
 import api.android.Android;
 import api.apps.hyundai.Hyundai;
+import api.apps.hyundai.menu.garage.Garage;
 import api.apps.hyundai.menu.garage.addcar.AddCarAfterRegistration;
 import api.apps.hyundai.auth.Auth;
 import api.apps.hyundai.auth.ForgotPassword;
 import api.apps.hyundai.auth.Register;
 import api.apps.hyundai.menu.garage.addcar.ChooseCarAfterRegistration;
-import api.apps.hyundai.startscreens.StartScreen1;
+import api.apps.hyundai.auth.startscreens.StartScreen1;
+import core.MyLogger;
 import core.managers.TestManager;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -56,7 +58,15 @@ public class Navigation extends TestManager {
     public void test2() {
         testInfo.id("test2").name("Verify Auth");
         Auth auth = new Auth();
-        auth.waitToLoad().tapGoToRegisterButton();
+        auth.waitToLoad().tapEmail().typeText("sav80@bk.ru");
+        auth.tapPassword().typeText("Qwerty1");
+        Garage garage = auth.tapEnterButton().waitToLoad().tapMenu().tapMoreButton().waitToLoad().tapGarageButton();
+        garage.tapConfigurationsNavigationButton().waitToLoad().getConfigurationCardByIndex(0).waitToLoad().tapBurgerButton();
+        Android.adb.tapBackButtonOnPhone();
+
+        MyLogger.log.info(garage.configurtations.getConfigurationCardByIndex(1).waitToLoad().getCarModification());
+        MyLogger.log.info(garage.configurtations.getConfigurationCardByIndex(1).waitToLoad().getCarComplectation());
+
  /*       Assert.assertTrue(auth.uiObject.title().exists());
         auth.tapEmail().typeText("test@test.ru");
         auth.tapPassword().typeText("PaSsWoRd");
@@ -79,7 +89,7 @@ public class Navigation extends TestManager {
 
     }
 
-    @Test
+    //@Test
     public void test4() {
         testInfo.id("test2").name("Choose Car");
         Register reg = new Register();
@@ -88,7 +98,7 @@ public class Navigation extends TestManager {
         reg.tapPassword().waitToAppear(5).typeText("Qwerty1");
         AddCarAfterRegistration add = reg.tapRegisterButton();
         ChooseCarAfterRegistration choosecar = add.waitToLoad().tapPlusButton();
-        choosecar.tapCarByIndex(11);
+        choosecar.chooseCar.ByIndex(11);
     }
 
 

@@ -21,11 +21,12 @@ import api.apps.hyundai.menu.support.Support;
 import api.apps.hyundai.menu.technicalservice.TechnicalService;
 import api.apps.hyundai.menu.testdrive.TestDrive;
 import api.apps.hyundai.navigator.Navigator;
-import api.apps.hyundai.startscreens.StartScreen1;
-import api.apps.hyundai.startscreens.StartScreen2;
-import api.apps.hyundai.startscreens.StartScreen3;
-import api.apps.hyundai.startscreens.StartScreen4;
+import api.apps.hyundai.auth.startscreens.StartScreen1;
+import api.apps.hyundai.auth.startscreens.StartScreen2;
+import api.apps.hyundai.auth.startscreens.StartScreen3;
+import api.apps.hyundai.auth.startscreens.StartScreen4;
 import api.interfaces.Application;
+import core.MyLogger;
 
 
 /**
@@ -61,6 +62,20 @@ public class Hyundai implements Application{
     public MyProfile myProfile = new MyProfile();
     public LookForDiler lookForDiler = new LookForDiler();
     public Support support = new Support();
+
+    public void swipeDown (int count) {
+        MyLogger.log.debug("Swiping down");
+        for (int i=0; i<count; i++) {
+            Android.driver.swipe(300, 640, 300, 50, 300);
+        }
+    }
+
+    public void swipeUp (int count) {
+        MyLogger.log.debug("Swiping up");
+        for (int i=0; i<count; i++) {
+            Android.driver.swipe(300, 300, 300, 700, 300);
+        }
+    }
 
     @Override
     public void forceStop() {

@@ -1,9 +1,12 @@
 package core;
 
 import api.android.Android;
+import io.appium.java_client.MobileBy;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 /**
  * Created by Artur on 4/13/2016.
@@ -173,6 +176,11 @@ public class UiObject {
             Android.driver.scrollTo(text);
         }
         return this;
+    }
+
+    public List<WebElement> getAllWebElements(){
+        if(isXpath()) return Android.driver.findElements(MobileBy.xpath(locator));
+        return Android.driver.findElementsByAndroidUIAutomator(locator);
     }
 
     public UiObject waitToAppear(int seconds){

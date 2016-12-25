@@ -14,21 +14,7 @@ import java.util.List;
 public class ChooseCarAfterRegistration implements Activity {
 
     public static ChooseCarAfterRegistrationUiObjects uiObject = new ChooseCarAfterRegistrationUiObjects();
-
-    public AddCarByVIN tapCarByIndex(Integer i){
-        try{
-            MyLogger.log.info("Tapping CarByIndex="+i);
-            uiObject.allCars().waitToAppear(5);
-            List<WebElement> allCars = Android.driver.findElementsByAndroidUIAutomator(uiObject.allCars().getLocator());
-            for (WebElement car : allCars) {
-                MyLogger.log.debug("Size of cars="+allCars.size());
-            }
-            allCars.get(0).click();
-            return Android.app.hyundai.addCarByVIN;
-        }catch (NoSuchElementException e){
-            throw new AssertionError("Cant tap Register Button, element absent or blocked");
-        }
-    }
+    public static ChooseCar chooseCar = new ChooseCar();
 
     @Override
     public ChooseCarAfterRegistration waitToLoad() {

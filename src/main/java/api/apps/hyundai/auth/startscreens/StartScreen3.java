@@ -1,4 +1,4 @@
-package api.apps.hyundai.startscreens;
+package api.apps.hyundai.auth.startscreens;
 
 import api.android.Android;
 import core.MyLogger;

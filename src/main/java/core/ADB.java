@@ -124,6 +124,10 @@ public class ADB {
         return command("adb -s "+ID+" shell getprop gsm.operator.alpha");
     }
 
+    public void tapBackButtonOnPhone(){command("adb -s "+ID+" shell input keyevent 4");}
+
+    public void tapHomeButtonOnPhone(){command("adb -s "+ID+" shell input keyevent 3");}
+
     public ArrayList getLogcatProcesses(){
         String[] output = command("adb -s "+ID+" shell top -n 1 | grep -i 'logcat'").split("\n");
         ArrayList processes = new ArrayList();

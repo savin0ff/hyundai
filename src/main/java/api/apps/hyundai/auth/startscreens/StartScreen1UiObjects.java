@@ -1,9 +1,8 @@
-package api.apps.hyundai.startscreens;
+package api.apps.hyundai.auth.startscreens;
 
 import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
-import io.appium.java_client.MobileElement;
 
 /**
  * Created by sav80 on 18.12.2016.
