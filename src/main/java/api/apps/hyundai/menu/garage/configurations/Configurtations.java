@@ -9,7 +9,9 @@ import api.apps.hyundai.menu.garage.cars.GarageCars;
 import api.interfaces.Activity;
 import core.MyLogger;
 import core.Timer;
+import core.UiObject;
 import io.appium.java_client.MobileBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
@@ -50,31 +52,14 @@ public class Configurtations extends Garage implements Activity{
         }
     }
 
-    public ConfigurationCard getConfigurationCardByIndex(Integer i) {
-        MyLogger.log.info("Getting configuration card by index = "+i);
-        Timer timer = new Timer();
-        timer.start();
-        while (!timer.expired(7)) {
-            try {
-                List<WebElement> allConfigurations = uiObject.allConfigurations().waitToAppear(5).getAllWebElements();
-                for (WebElement configuration : allConfigurations) {
-                    try {
-                        MyLogger.log.info("------------index" + configuration.getAttribute("index"));
-                        MyLogger.log.info("------------class" + configuration.getAttribute("class"));
-                        if (configuration.getAttribute("index").equals(i.toString()))
-                            return new ConfigurationCard(configuration);
-                    } catch (NoSuchElementException e) {
-                        continue;
-                    }
-                }
-
-            } catch (NoSuchElementException e){
-                throw new AssertionError("Element allConfigurations for Configuration Card absent or blocked");
-            }
-            Android.app.hyundai.swipeDown(1);
+    public ConfigurationCard getConfigurationCard(Integer i) {
+        MyLogger.log.info("Getting configuration card by index = " + i);
+        try {
+            ConfigurationCard card = new ConfigurationCard(i);
+            return card.waitToLoad();
+        } catch (NoSuchElementException e) {
+            throw new AssertionError("Element allConfigurations for Configuration Card absent or blocked");
         }
-        throw new AssertionError("Element Configuration Card failed to appear within " + 15 + " seconds");
-
     }
 
     @Override

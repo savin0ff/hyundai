@@ -1,5 +1,6 @@
 package api.apps.hyundai.menu.garage.configurations;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 import org.openqa.selenium.By;
@@ -9,6 +10,11 @@ import org.openqa.selenium.WebElement;
  * Created by sav80 on 24.12.2016.
  */
 public class ConfigurationCardUiObjects {
+    ConfigurationCardUiObjects (Integer index){
+        this.xPathForAllElements = "//android.support.v7.widget.RecyclerView[@index='0']/android.widget.LinearLayout[@index='"+index+"']";
+    }
+
+    String xPathForAllElements;
 
     private static UiObject
                 carModelName,
@@ -35,7 +41,7 @@ public class ConfigurationCardUiObjects {
     }
 
     public UiObject burgerButtton() {
-        burgerButtton = new UiSelector().resourceId(":id/my_garage_configuration_dots").makeUiObject();
+        burgerButtton = new UiSelector().xPath(xPathForAllElements+"//android.widget.ImageView[@resource-id='"+ Android.app.hyundai.packageID()+":id/my_garage_configuration_dots']").makeUiObject();
         return burgerButtton;
     }
 

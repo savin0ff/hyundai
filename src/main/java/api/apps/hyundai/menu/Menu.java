@@ -210,7 +210,7 @@ public class Menu implements Activity {
     public Menu waitToLoad() {
         try{
             MyLogger.log.info("Waiting for Menu activity");
-            uiObject.myProfileButton().waitToAppear(5);
+            uiObject.closeMenuButton().waitToAppear(5);
             return Android.app.hyundai.menu;
         }catch (AssertionError e){
             throw new AssertionError("Menu activity failed to load/open");

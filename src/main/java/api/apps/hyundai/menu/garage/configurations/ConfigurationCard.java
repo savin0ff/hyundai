@@ -17,13 +17,13 @@ import java.util.List;
 /**
  * Created by sav80 on 24.12.2016.
  */
-public class ConfigurationCard implements Activity{
-    ConfigurationCard (WebElement element) {
-        this.element = element;
+public class ConfigurationCard implements Activity {
+    ConfigurationCard(Integer index) {
+        this.uiObject = new ConfigurationCardUiObjects(index);
     }
 
-    //public static ConfigurationCardUiObjects uiObject = new ConfigurationCardUiObjects();
-    private WebElement element;
+    public ConfigurationCardUiObjects uiObject;
+
     private static String
             carModelNameSelector = ":id/my_garage_configuration_model",
             carPriceSelector = ":id/my_garage_configuration_car_price",
@@ -33,7 +33,7 @@ public class ConfigurationCard implements Activity{
             descriptionOnSiteMenuButtonSelector = "Описание модели на сайте",
             deleteMenuButtonSelector = "Удалить";
 
-    public String getCarModelName(){
+/*    public String getCarModelName(){
         try{
             MyLogger.log.info("Getting car model name in configuration in the garage");
             return element.findElement(By.id(Android.app.hyundai.packageID()+carModelNameSelector)).getText();
@@ -71,40 +71,32 @@ public class ConfigurationCard implements Activity{
         }catch (NoSuchElementException e){
             throw new AssertionError("Cant Get car Complectation in configuration card in the garage, element absent or blocked");
         }
-    }
+    }*/
 
-    public ConfigurationCard tapBurgerButton(){
-        try{
+    public ConfigurationCard tapBurgerButton() {
+        try {
             MyLogger.log.info("Tapping BurgerButton button on car configuration in the garage");
-            element.findElement(By.id(Android.app.hyundai.packageID()+burgerButttonSelector)).click();
+            uiObject.burgerButtton().tap();
             return this;
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             throw new AssertionError("Cant tap BurgerButton button on car configuration in the garage, element absent or blocked");
         }
     }
 
-    private Boolean isCardVisible(){
-        if(element.findElement(By.id(Android.app.hyundai.packageID()+carModelNameSelector)).isDisplayed()&&
-                element.findElement(By.id(Android.app.hyundai.packageID()+carModificationAndComplectationSelector)).isDisplayed()) return true;
-        else return false;
-    }
-
     @Override
     public ConfigurationCard waitToLoad() {
-        try{
-            MyLogger.log.info("Waiting for Configuration Card activity");
-            Timer timer = new Timer();
-            timer.start();
-            while(!timer.expired(10)) {
-                if(isCardVisible()) break;
+        MyLogger.log.info("Waiting for Configuration Card activity");
+        Timer timer = new Timer();
+        timer.start();
+        while (!timer.expired(15)) {
+            try {
+                uiObject.burgerButtton().waitToAppear(5);
+                return this;
+            } catch (AssertionError e) {
                 Android.app.hyundai.swipeDown(1);
+                continue;
             }
-            if(timer.expired(10) && !isCardVisible()) throw new AssertionError("Element Configuration Card failed to appear within "+10+" seconds");
-            return this;
-        }catch (AssertionError e){
-            throw new AssertionError("Garage Configuration Card activity failed to load/open");
         }
+        throw new AssertionError("Garage Configuration Card activity failed to load/open");
     }
-
-
 }

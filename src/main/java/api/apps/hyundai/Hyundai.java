@@ -66,7 +66,7 @@ public class Hyundai implements Application{
     public void swipeDown (int count) {
         MyLogger.log.debug("Swiping down");
         for (int i=0; i<count; i++) {
-            Android.driver.swipe(300, 640, 300, 50, 300);
+            Android.driver.swipe(300, 600, 300, 200, 300);
         }
     }
 

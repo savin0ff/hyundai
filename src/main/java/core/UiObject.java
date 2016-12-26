@@ -37,6 +37,7 @@ public class UiObject {
             WebElement element;
             if(isXpath()) element = Android.driver.findElementByXPath(locator);
             else element = Android.driver.findElementByAndroidUIAutomator(locator);
+            System.out.println(locator + " isDisplayed="+element.isDisplayed());
             return element.isDisplayed();
         }catch (NoSuchElementException e){
             return false;
@@ -179,7 +180,9 @@ public class UiObject {
     }
 
     public List<WebElement> getAllWebElements(){
-        if(isXpath()) return Android.driver.findElements(MobileBy.xpath(locator));
+        if(isXpath())  {
+            return Android.driver.findElements(MobileBy.xpath(locator));
+        }
         return Android.driver.findElementsByAndroidUIAutomator(locator);
     }
 
@@ -190,6 +193,7 @@ public class UiObject {
         if(timer.expired(seconds) && !exists()) throw new AssertionError("Element "+locator+" failed to appear within "+seconds+" seconds");
         return this;
     }
+
 
     public UiObject waitToDisappear(int seconds){
         Timer timer = new Timer();

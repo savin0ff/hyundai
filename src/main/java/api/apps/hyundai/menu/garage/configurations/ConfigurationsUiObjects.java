@@ -39,8 +39,4 @@ public class ConfigurationsUiObjects {
         return newConfigurationButton;
     }
 
-    public UiObject allConfigurations() {
-        allConfigurations = new UiSelector().xPath("//android.support.v7.widget.RecyclerView[@index='0']/android.widget.LinearLayout").makeUiObject();
-        return allConfigurations;
-    }
 }
