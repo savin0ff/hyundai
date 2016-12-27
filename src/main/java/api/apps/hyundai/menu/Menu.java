@@ -2,7 +2,7 @@ package api.apps.hyundai.menu;
 
 import api.android.Android;
 import api.apps.hyundai.advices.Advices;
-import api.apps.hyundai.auth.Auth;
+import api.apps.hyundai.startappscreens.auth.Auth;
 import api.apps.hyundai.balance.Balance;
 import api.apps.hyundai.balance.gifts.Gifts;
 import api.apps.hyundai.events.Events;

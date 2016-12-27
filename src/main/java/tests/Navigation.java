@@ -3,12 +3,12 @@ package tests;
 import api.android.Android;
 import api.apps.hyundai.Hyundai;
 import api.apps.hyundai.menu.garage.Garage;
-import api.apps.hyundai.menu.garage.addcar.AddCarAfterRegistration;
-import api.apps.hyundai.auth.Auth;
-import api.apps.hyundai.auth.ForgotPassword;
-import api.apps.hyundai.auth.Register;
-import api.apps.hyundai.menu.garage.addcar.ChooseCarAfterRegistration;
-import api.apps.hyundai.auth.startscreens.StartScreen1;
+import api.apps.hyundai.startappscreens.register.addcar.AddCarAfterRegistration;
+import api.apps.hyundai.startappscreens.auth.Auth;
+import api.apps.hyundai.startappscreens.auth.forgotpass.ForgotPassword;
+import api.apps.hyundai.startappscreens.register.Register;
+import api.apps.hyundai.startappscreens.register.addcar.choosecar.ChooseCarAfterRegistration;
+import api.apps.hyundai.startappscreens.startscreens.StartScreen1;
 import core.MyLogger;
 import core.managers.TestManager;
 import org.junit.Before;
@@ -44,8 +44,8 @@ public class Navigation extends TestManager {
         sc3.waitToLoad().checkIsAllElementsExists();
         StartScreen1 sc4 = sc3.swipeRight();
         sc4.waitToLoad().checkIsAllElementsExists();
-        Auth auth = sc4.tapCloseButton();
-        auth.waitToLoad();
+        auth startappscreens = sc4.tapCloseButton();
+        startappscreens.waitToLoad();
         hyundai.forceStop();
         hyundai.clearData();
         hyundai.open();
@@ -56,26 +56,28 @@ public class Navigation extends TestManager {
 
     @Test
     public void test2() {
-        testInfo.id("test2").name("Verify Auth");
+        testInfo.id("test2").name("Verify auth");
         Auth auth = new Auth();
         auth.waitToLoad().tapEmail().typeText("sav80@bk.ru");
         auth.tapPassword().typeText("Qwerty1");
         Garage garage = auth.tapEnterButton().waitToLoad().tapMenu().tapMoreButton().waitToLoad().tapGarageButton();
+        garage.tapCarsNavigationButton().tapPlusButton().addCarByIndex(1).
         garage.tapConfigurationsNavigationButton().waitToLoad().getConfigurationCard(0).waitToLoad().tapBurgerButton();
         Android.adb.tapBackButtonOnPhone();
+        garage.tapConfigurationsNavigationButton().tapNewConfigurationButton();
 
         MyLogger.log.info(garage.configurtations.getConfigurationCard(1).waitToLoad().getCarModificationAndComplectation());
         MyLogger.log.info(garage.configurtations.getConfigurationCard(2).waitToLoad().getCarModificationAndComplectation());
 
- /*       Assert.assertTrue(auth.uiObject.title().exists());
-        auth.tapEmail().typeText("test@test.ru");
-        auth.tapPassword().typeText("PaSsWoRd");
-        auth.tapShowPassword();
-        auth.uiObject.title().tap();
-        auth.tapPassword().typeText("123456").waitToAppear(5);
-        Assert.assertTrue("Assert password as was typed", auth.uiObject.password().getText().equals("PaSsWoRd123456"));
-        auth.tapShowPassword();
-        ForgotPassword fp = auth.tapForgotPassword().waitToLoad();
+ /*       Assert.assertTrue(startappscreens.uiObject.title().exists());
+        startappscreens.tapEmail().typeText("test@test.ru");
+        startappscreens.tapPassword().typeText("PaSsWoRd");
+        startappscreens.tapShowPassword();
+        startappscreens.uiObject.title().tap();
+        startappscreens.tapPassword().typeText("123456").waitToAppear(5);
+        Assert.assertTrue("Assert password as was typed", startappscreens.uiObject.password().getText().equals("PaSsWoRd123456"));
+        startappscreens.tapShowPassword();
+        ForgotPassword fp = startappscreens.tapForgotPassword().waitToLoad();
         fp.tapBackToAuthButton().tapGoToRegisterButton();*/
     }
 
@@ -98,7 +100,7 @@ public class Navigation extends TestManager {
         reg.tapPassword().waitToAppear(5).typeText("Qwerty1");
         AddCarAfterRegistration add = reg.tapRegisterButton();
         ChooseCarAfterRegistration choosecar = add.waitToLoad().tapPlusButton();
-        choosecar.chooseCar.ByIndex(11);
+        choosecar.chooseCar.addCarByIndex(11);
     }
 
 

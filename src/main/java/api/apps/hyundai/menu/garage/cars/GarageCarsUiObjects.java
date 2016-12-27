@@ -1,7 +1,7 @@
 package api.apps.hyundai.menu.garage.cars;
 
 import api.android.Android;
-import api.apps.hyundai.menu.garage.addcar.ChooseCarListUiObjects;
+import api.apps.hyundai.menu.garage.cars.choosecar.ChooseCarListUiObjects;
 import core.UiObject;
 import core.UiSelector;
 

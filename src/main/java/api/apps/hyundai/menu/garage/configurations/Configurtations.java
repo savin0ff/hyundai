@@ -4,18 +4,9 @@ package api.apps.hyundai.menu.garage.configurations;
 import api.android.Android;
 import api.apps.hyundai.menu.configurator.Configurator;
 import api.apps.hyundai.menu.garage.Garage;
-import api.apps.hyundai.menu.garage.addcar.ActivateCar;
-import api.apps.hyundai.menu.garage.cars.GarageCars;
 import api.interfaces.Activity;
 import core.MyLogger;
-import core.Timer;
-import core.UiObject;
-import io.appium.java_client.MobileBy;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 /**
  * Created by sav80 on 24.12.2016.
@@ -32,7 +23,7 @@ public class Configurtations extends Garage implements Activity{
         }
     }
 
-    public Configurator tapAddConfiguratonButton(){
+    public Configurator tapAddConfigurationButton(){
         try{
             MyLogger.log.info("Tapping AddConfiguraton button in the garage");
             uiObject.addConfigurationButton().waitToAppear(5).tap();
@@ -42,10 +33,10 @@ public class Configurtations extends Garage implements Activity{
         }
     }
 
-    public Configurator tapNewConfiguratonButton(){
+    public Configurator tapNewConfigurationButton(){
         try{
             MyLogger.log.info("Tapping NewConfiguraton button in the garage");
-            uiObject.newConfigurationButton().waitToAppear(5).tap();
+            uiObject.newConfigurationButton().waitToAppearWithSwiping(5).tap();
             return Android.app.hyundai.configurator;
         }catch (NoSuchElementException e){
             throw new AssertionError("Cant tap NewConfiguraton button in the garage, element absent or blocked");

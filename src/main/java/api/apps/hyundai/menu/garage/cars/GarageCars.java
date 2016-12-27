@@ -2,10 +2,9 @@ package api.apps.hyundai.menu.garage.cars;
 
 import api.android.Android;
 import api.apps.hyundai.menu.garage.Garage;
-import api.apps.hyundai.menu.garage.addcar.ActivateCar;
-import api.apps.hyundai.menu.garage.addcar.AddCarByVIN;
-import api.apps.hyundai.menu.garage.addcar.ChooseCar;
-import api.apps.hyundai.menu.technicalservice.TechnicalService;
+import api.apps.hyundai.menu.garage.cars.activatecar.ActivateCar;
+import api.apps.hyundai.menu.garage.cars.addvin.AddCarByVIN;
+import api.apps.hyundai.menu.garage.cars.choosecar.ChooseCar;
 import api.interfaces.Activity;
 import core.MyLogger;
 import org.openqa.selenium.NoSuchElementException;

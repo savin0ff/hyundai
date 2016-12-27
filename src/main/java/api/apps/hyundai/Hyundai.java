@@ -1,9 +1,9 @@
 package api.apps.hyundai;
 
 import api.android.Android;
-import api.apps.hyundai.menu.garage.addcar.AddCarAfterRegistration;
+import api.apps.hyundai.popups.Popups;
+import api.apps.hyundai.startappscreens.register.addcar.AddCarAfterRegistration;
 import api.apps.hyundai.advices.Advices;
-import api.apps.hyundai.auth.*;
 import api.apps.hyundai.balance.Balance;
 import api.apps.hyundai.balance.gifts.Gifts;
 import api.apps.hyundai.calendar.Calendar;
@@ -12,8 +12,8 @@ import api.apps.hyundai.menu.Menu;
 import api.apps.hyundai.home.Home;
 import api.apps.hyundai.menu.configurator.Configurator;
 import api.apps.hyundai.menu.garage.Garage;
-import api.apps.hyundai.menu.garage.addcar.AddCarByVIN;
-import api.apps.hyundai.menu.garage.addcar.ChooseCarAfterRegistration;
+import api.apps.hyundai.menu.garage.cars.addvin.AddCarByVIN;
+import api.apps.hyundai.startappscreens.register.addcar.choosecar.ChooseCarAfterRegistration;
 import api.apps.hyundai.menu.lookfordiler.LookForDiler;
 import api.apps.hyundai.menu.myprofile.MyProfile;
 import api.apps.hyundai.menu.specialoffers.SpecialOffers;
@@ -21,10 +21,15 @@ import api.apps.hyundai.menu.support.Support;
 import api.apps.hyundai.menu.technicalservice.TechnicalService;
 import api.apps.hyundai.menu.testdrive.TestDrive;
 import api.apps.hyundai.navigator.Navigator;
-import api.apps.hyundai.auth.startscreens.StartScreen1;
-import api.apps.hyundai.auth.startscreens.StartScreen2;
-import api.apps.hyundai.auth.startscreens.StartScreen3;
-import api.apps.hyundai.auth.startscreens.StartScreen4;
+import api.apps.hyundai.startappscreens.auth.Auth;
+import api.apps.hyundai.startappscreens.auth.forgotpass.ForgotPassword;
+import api.apps.hyundai.startappscreens.facebook.FacebookWebView;
+import api.apps.hyundai.startappscreens.register.Register;
+import api.apps.hyundai.startappscreens.startscreens.StartScreen1;
+import api.apps.hyundai.startappscreens.startscreens.StartScreen2;
+import api.apps.hyundai.startappscreens.startscreens.StartScreen3;
+import api.apps.hyundai.startappscreens.startscreens.StartScreen4;
+import api.apps.hyundai.startappscreens.vk.VKWebView;
 import api.interfaces.Application;
 import core.MyLogger;
 
@@ -62,6 +67,7 @@ public class Hyundai implements Application{
     public MyProfile myProfile = new MyProfile();
     public LookForDiler lookForDiler = new LookForDiler();
     public Support support = new Support();
+    public Popups popup = new Popups();
 
     public void swipeDown (int count) {
         MyLogger.log.debug("Swiping down");

@@ -178,18 +178,22 @@ public class UiObject {
         return this;
     }
 
-    public List<WebElement> getAllWebElements(){
-        if(isXpath())  {
-            return Android.driver.findElements(MobileBy.xpath(locator));
-        }
-        return Android.driver.findElementsByAndroidUIAutomator(locator);
-    }
-
     public UiObject waitToAppear(int seconds){
         Timer timer = new Timer();
         timer.start();
         while(!timer.expired(seconds)) if(exists()) break;
         if(timer.expired(seconds) && !exists()) throw new AssertionError("Element "+locator+" failed to appear within "+seconds+" seconds");
+        return this;
+    }
+
+    public UiObject waitToAppearWithSwiping(int seconds){
+        Timer timer = new Timer();
+        timer.start();
+        while(!timer.expired(seconds)) {
+            if(exists()) break;
+            Android.app.hyundai.swipeDown(1);
+        }
+        if(timer.expired(seconds) && !exists()) throw new AssertionError("Element "+locator+" failed to appear within swiping "+seconds+" seconds");
         return this;
     }
 

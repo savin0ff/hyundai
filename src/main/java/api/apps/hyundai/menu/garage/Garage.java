@@ -1,14 +1,12 @@
 package api.apps.hyundai.menu.garage;
 
 import api.android.Android;
-import api.apps.hyundai.home.Home;
+import api.apps.hyundai.footer_menu.FooterMenu;
 import api.apps.hyundai.menu.Menu;
-import api.apps.hyundai.menu.garage.addcar.ActivateCar;
-import api.apps.hyundai.menu.garage.addcar.AddCarByVIN;
-import api.apps.hyundai.menu.garage.addcar.ChooseCar;
+import api.apps.hyundai.menu.garage.cars.activatecar.ActivateCar;
+import api.apps.hyundai.menu.garage.cars.addvin.AddCarByVIN;
 import api.apps.hyundai.menu.garage.cars.GarageCars;
 import api.apps.hyundai.menu.garage.configurations.Configurtations;
-import api.interfaces.Activity;
 import core.MyLogger;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -18,9 +16,11 @@ import org.openqa.selenium.NoSuchElementException;
 public class Garage {
     public static GarageUiObjects uiObject = new GarageUiObjects();
     public static GarageCars garageCars = new GarageCars();
+    public static Configurtations configurtations = new Configurtations();
+    public static FooterMenu footerMenu = new FooterMenu();
     public static AddCarByVIN addCarByVIN = new AddCarByVIN();
     public static ActivateCar activateCar = new ActivateCar();
-    public static Configurtations configurtations = new Configurtations();
+
 
     public Menu tapMenuButton(){
         try{

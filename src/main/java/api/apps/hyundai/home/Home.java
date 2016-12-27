@@ -29,6 +29,9 @@ public class Home implements Activity {
     public Home waitToLoad() {
         try{
             MyLogger.log.info("Waiting for Home activity");
+            if (Android.app.hyundai.popup.uiObject.popupCloseButton().exists()){ //Close popup if it appear
+                Android.app.hyundai.popup.tapPopupClose();
+            }
             uiObject.toolbarText().waitToAppear(15);
             return Android.app.hyundai.home;
         }catch (AssertionError e){
