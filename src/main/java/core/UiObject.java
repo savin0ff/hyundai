@@ -37,7 +37,6 @@ public class UiObject {
             WebElement element;
             if(isXpath()) element = Android.driver.findElementByXPath(locator);
             else element = Android.driver.findElementByAndroidUIAutomator(locator);
-            System.out.println(locator + " isDisplayed="+element.isDisplayed());
             return element.isDisplayed();
         }catch (NoSuchElementException e){
             return false;

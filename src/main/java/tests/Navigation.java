@@ -64,8 +64,8 @@ public class Navigation extends TestManager {
         garage.tapConfigurationsNavigationButton().waitToLoad().getConfigurationCard(0).waitToLoad().tapBurgerButton();
         Android.adb.tapBackButtonOnPhone();
 
-  /*      MyLogger.log.info(garage.configurtations.getConfigurationCardByIndex(1).waitToLoad().getCarModification());
-        MyLogger.log.info(garage.configurtations.getConfigurationCardByIndex(1).waitToLoad().getCarComplectation());*/
+        MyLogger.log.info(garage.configurtations.getConfigurationCard(1).waitToLoad().getCarModificationAndComplectation());
+        MyLogger.log.info(garage.configurtations.getConfigurationCard(2).waitToLoad().getCarModificationAndComplectation());
 
  /*       Assert.assertTrue(auth.uiObject.title().exists());
         auth.tapEmail().typeText("test@test.ru");

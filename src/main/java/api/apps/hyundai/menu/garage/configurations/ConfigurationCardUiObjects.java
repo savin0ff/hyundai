@@ -26,22 +26,26 @@ public class ConfigurationCardUiObjects {
                 deleteMenuButton;
 
     public UiObject carModelName() {
-        carModelName = new UiSelector().resourceId(":id/my_garage_configuration_model").makeUiObject();
+        carModelName = new UiSelector().xPath(xPathForAllElements+"//android.widget.TextView[@resource-id='"+
+                Android.app.hyundai.packageID()+":id/my_garage_configuration_model']").makeUiObject();
         return carModelName;
     }
 
     public UiObject carPrice() {
-        carPrice = new UiSelector().resourceId(":id/my_garage_configuration_car_price").makeUiObject();
+        carPrice = new UiSelector().xPath(xPathForAllElements+"//android.widget.TextView[@resource-id='"+
+                Android.app.hyundai.packageID()+":id/my_garage_configuration_car_price']").makeUiObject();
         return carPrice;
     }
 
     public UiObject carModificationAndComplectation() {
-        carModificationAndComplectation = new UiSelector().resourceId(":id/my_garage_configuration_description").makeUiObject();
+        carModificationAndComplectation = new UiSelector().xPath(xPathForAllElements+"//android.widget.TextView[@resource-id='"+
+                Android.app.hyundai.packageID()+":id/my_garage_configuration_description']").makeUiObject();
         return carModificationAndComplectation;
     }
 
     public UiObject burgerButtton() {
-        burgerButtton = new UiSelector().xPath(xPathForAllElements+"//android.widget.ImageView[@resource-id='"+ Android.app.hyundai.packageID()+":id/my_garage_configuration_dots']").makeUiObject();
+        burgerButtton = new UiSelector().xPath(xPathForAllElements+"//android.widget.ImageView[@resource-id='"+
+                Android.app.hyundai.packageID()+":id/my_garage_configuration_dots']").makeUiObject();
         return burgerButtton;
     }
 
