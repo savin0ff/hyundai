@@ -2,6 +2,7 @@ package api.apps.hyundai.menu;
 
 import api.android.Android;
 import api.apps.hyundai.advices.Advices;
+import api.apps.hyundai.menu.garage.cars.GarageCars;
 import api.apps.hyundai.startappscreens.auth.Auth;
 import api.apps.hyundai.balance.Balance;
 import api.apps.hyundai.balance.gifts.Gifts;
@@ -107,11 +108,11 @@ public class Menu implements Activity {
         }
     }
 
-    public Garage tapGarageButton(){
+    public GarageCars tapGarageButton(){
         try{
             MyLogger.log.info("Tapping Garage Button ");
             uiObject.garageButton().waitToAppear(5).tap();
-            return Android.app.hyundai.garage;
+            return new GarageCars();
         }catch (NoSuchElementException e){
             throw new AssertionError("Cant tap Garage Button, element absent or blocked");
         }

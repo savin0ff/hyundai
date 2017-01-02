@@ -1,6 +1,7 @@
 package api.apps.hyundai.menu.garage.cars.choosecar;
 
 import api.android.Android;
+import api.apps.hyundai.menu.garage.Garage;
 import api.apps.hyundai.menu.garage.cars.addvin.AddCarByVIN;
 import api.interfaces.Activity;
 import core.MyLogger;
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Created by sav80 on 24.12.2016.
  */
-public class ChooseCar implements Activity{
+public class ChooseCar extends Garage implements Activity{
     public static ChooseCarListUiObjects uiObject = new ChooseCarListUiObjects();
 
     public AddCarByVIN addCarByIndex(Integer i){
@@ -32,6 +33,7 @@ public class ChooseCar implements Activity{
     public ChooseCar waitToLoad() {
         try{
             MyLogger.log.info("Waiting for List of Cars activity");
+            super.uiObject.carsNavigationButton().waitToAppear(5);
             uiObject.allCars().waitToAppear(5);
             return this;
         }catch (AssertionError e){

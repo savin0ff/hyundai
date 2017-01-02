@@ -1,4 +1,4 @@
-package api.apps.hyundai.menu.garage.configurations;
+package api.apps.hyundai.menu.garage.configurations.cards;
 
 import api.android.Android;
 import core.UiObject;
@@ -14,7 +14,7 @@ public class ConfigurationCardUiObjects {
         this.xPathForAllElements = "//android.support.v7.widget.RecyclerView[@index='0']/android.widget.LinearLayout[@index='"+index+"']";
     }
 
-    String xPathForAllElements;
+    private String xPathForAllElements;
 
     private static UiObject
                 carModelName,

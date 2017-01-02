@@ -1,11 +1,12 @@
-package api.apps.hyundai.footer_menu;
+package api.apps.hyundai.sharedblocks.footer_menu;
 
 import api.android.Android;
 import api.apps.hyundai.advices.Advices;
+import api.apps.hyundai.sharedblocks.menubutton.MenuButton;
 import core.MyLogger;
 import org.openqa.selenium.NoSuchElementException;
 
-public class FooterMenu {
+public class FooterMenu extends MenuButton{
 
     public FooterMenuUiObjects menuObject = new FooterMenuUiObjects();
 

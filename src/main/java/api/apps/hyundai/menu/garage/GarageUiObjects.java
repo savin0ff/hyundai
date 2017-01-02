@@ -1,7 +1,6 @@
 package api.apps.hyundai.menu.garage;
 
-import api.android.Android;
-import api.apps.hyundai.footer_menu.FooterMenu;
+import api.apps.hyundai.sharedblocks.footer_menu.FooterMenu;
 import core.UiObject;
 import core.UiSelector;
 

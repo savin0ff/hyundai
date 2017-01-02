@@ -60,14 +60,14 @@ public class Navigation extends TestManager {
         Auth auth = new Auth();
         auth.waitToLoad().tapEmail().typeText("sav80@bk.ru");
         auth.tapPassword().typeText("Qwerty1");
-        Garage garage = auth.tapEnterButton().waitToLoad().tapMenu().tapMoreButton().waitToLoad().tapGarageButton();
-        garage.tapCarsNavigationButton().tapPlusButton().addCarByIndex(1).
-        garage.tapConfigurationsNavigationButton().waitToLoad().getConfigurationCard(0).waitToLoad().tapBurgerButton();
+        Garage g = auth.tapEnterButton().waitToLoad().tapMenu().tapMoreButton().waitToLoad().tapGarageButton();
+        g.tapCarsNavigationButton().tapPlusButton().addCarByIndex(1);
+        g.tapConfigurationsNavigationButton().waitToLoad().getConfigurationCard(0).waitToLoad().tapBurgerButton();
         Android.adb.tapBackButtonOnPhone();
-        garage.tapConfigurationsNavigationButton().tapNewConfigurationButton();
+        g.tapConfigurationsNavigationButton().tapNewConfigurationButton();
 
-        MyLogger.log.info(garage.configurtations.getConfigurationCard(1).waitToLoad().getCarModificationAndComplectation());
-        MyLogger.log.info(garage.configurtations.getConfigurationCard(2).waitToLoad().getCarModificationAndComplectation());
+        //MyLogger.log.info(g.getConfigurationCard(1).waitToLoad().getCarModificationAndComplectation());
+        //MyLogger.log.info(g.configurtations.getConfigurationCard(2).waitToLoad().getCarModificationAndComplectation());
 
  /*       Assert.assertTrue(startappscreens.uiObject.title().exists());
         startappscreens.tapEmail().typeText("test@test.ru");

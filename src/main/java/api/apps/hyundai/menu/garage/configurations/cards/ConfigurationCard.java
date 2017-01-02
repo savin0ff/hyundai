@@ -1,24 +1,16 @@
-package api.apps.hyundai.menu.garage.configurations;
+package api.apps.hyundai.menu.garage.configurations.cards;
 
 import api.android.Android;
-import api.apps.hyundai.menu.configurator.Configurator;
-import api.apps.hyundai.menu.garage.cars.GarageCars;
 import api.interfaces.Activity;
 import core.MyLogger;
 import core.Timer;
-import core.UiObject;
-import org.apache.xpath.operations.Bool;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 /**
  * Created by sav80 on 24.12.2016.
  */
 public class ConfigurationCard implements Activity {
-    ConfigurationCard(Integer index) {
+    public ConfigurationCard(Integer index) {
         this.uiObject = new ConfigurationCardUiObjects(index);
     }
 

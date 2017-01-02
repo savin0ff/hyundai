@@ -2,7 +2,6 @@ package tests;
 
 import api.android.Android;
 import api.apps.hyundai.Hyundai;
-import api.apps.speedtest.Speedtest;
 import core.managers.TestManager;
 import org.junit.Assert;
 import org.junit.Test;

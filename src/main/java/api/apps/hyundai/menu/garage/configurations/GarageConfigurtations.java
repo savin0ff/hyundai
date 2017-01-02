@@ -4,6 +4,7 @@ package api.apps.hyundai.menu.garage.configurations;
 import api.android.Android;
 import api.apps.hyundai.menu.configurator.Configurator;
 import api.apps.hyundai.menu.garage.Garage;
+import api.apps.hyundai.menu.garage.configurations.cards.ConfigurationCard;
 import api.interfaces.Activity;
 import core.MyLogger;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,8 +12,8 @@ import org.openqa.selenium.NoSuchElementException;
 /**
  * Created by sav80 on 24.12.2016.
  */
-public class Configurtations extends Garage implements Activity{
-    public static ConfigurationsUiObjects uiObject = new ConfigurationsUiObjects();
+public class GarageConfigurtations extends Garage implements Activity{
+    public static GarageConfigurationsUiObjects uiObject = new GarageConfigurationsUiObjects();
 
     public Boolean isConfigurationsExist(){
         try{
@@ -54,7 +55,7 @@ public class Configurtations extends Garage implements Activity{
     }
 
     @Override
-    public Configurtations waitToLoad() {
+    public GarageConfigurtations waitToLoad() {
         try{
             MyLogger.log.info("Waiting for Garage Configurations activity");
             super.uiObject.navigationBarText().waitToAppear(10);

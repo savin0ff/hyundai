@@ -1,5 +1,4 @@
 import api.android.Android;
-import api.apps.speedtest.home.Home;
 import core.MyLogger;
 import core.managers.DriverManager;
 import org.apache.log4j.Level;

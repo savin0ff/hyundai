@@ -1,4 +1,4 @@
-package api.apps.hyundai.footer_menu;
+package api.apps.hyundai.sharedblocks.footer_menu;
 
 import api.android.Android;
 import core.MyLogger;

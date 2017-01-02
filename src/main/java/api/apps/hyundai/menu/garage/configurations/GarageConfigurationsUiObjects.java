@@ -6,7 +6,7 @@ import core.UiSelector;
 /**
  * Created by sav80 on 24.12.2016.
  */
-public class ConfigurationsUiObjects {
+public class GarageConfigurationsUiObjects {
     private static UiObject
             //No configurations uiObjects
             noConfigurationsTitle,
