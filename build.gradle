@@ -5,6 +5,11 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+task my (type: JavaExec) {
+    main = "Runner"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
 task buildJar(type: Jar){
     manifest{
         attributes 'Implementation-Title': 'Hyndai',
