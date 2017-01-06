@@ -5,7 +5,7 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
-task my (type: JavaExec) {
+task runTest (type: JavaExec) {
     main = "Runner"
     classpath = sourceSets.main.runtimeClasspath
 }
