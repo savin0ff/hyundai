@@ -2,6 +2,7 @@ group 'MyGroup'
 version '1.0'
 
 apply plugin: 'java'
+apply plugin: 'genymotion'
 
 sourceCompatibility = 1.8
 
@@ -21,13 +22,14 @@ task buildJar(type: Jar){
     with jar
 }
 
-repositories {
-    mavenCentral()
-}
+    repositories {
+        mavenCentral()
+    }
 
 dependencies {
     compile 'io.appium:java-client:3.4.0'
     compile 'junit:junit:4.12'
     compile 'log4j:log4j:1.2.17'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
 }
