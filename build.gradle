@@ -2,7 +2,6 @@ group 'MyGroup'
 version '1.0'
 
 apply plugin: 'java'
-apply plugin: 'genymotion'
 
 sourceCompatibility = 1.8
 
